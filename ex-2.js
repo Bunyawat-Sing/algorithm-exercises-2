@@ -1,5 +1,16 @@
 function countPositivesSumNegatives(input) {
   //Start coding here
+  result = [];
+  if (input.length === 0) {
+    return result;
+  } else {
+    positive = input.filter((num) => num >= 0).length;
+    negative = input
+      .filter((num) => num < 0)
+      .reduce((arr, cur) => arr + cur, 0);
+    result = [positive, negative];
+    return result;
+  }
 }
 
 let result1 = countPositivesSumNegatives([
